@@ -1,0 +1,8 @@
+Package: com.yourcompany.applereload
+Name: AppleReload
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: An awesome application!
+Maintainer: U-DESKTOP-BDE10M9\Owner
+Author: U-DESKTOP-BDE10M9\Owner
+Section: Apps
