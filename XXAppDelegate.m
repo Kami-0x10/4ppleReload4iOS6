@@ -18,7 +18,7 @@
 
 // ポップアップを表示するメソッド
 - (void)showTestPopup {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"AppleReload"
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"メッセージ"
                                                     message:@"リスプリングしますか？"
                                                    delegate:self
                                           cancelButtonTitle:@"いいえ"
@@ -30,7 +30,7 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 1) { // "はい" を選択した場合
         // リスプリングを実行する
-        system("killall -HUP SpringBoard");
+        system("killall -9 SpringBoard backboardd");
     }
 }
 
