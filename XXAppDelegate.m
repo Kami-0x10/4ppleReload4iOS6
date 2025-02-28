@@ -18,11 +18,11 @@
 
 // ポップアップを表示するメソッド
 - (void)showTestPopup {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"メッセージ"
-                                                    message:@"リスプリングしますか？"
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Massage"
+                                                    message:@"Do you want to respring it?"
                                                    delegate:self
-                                          cancelButtonTitle:@"いいえ"
-                                          otherButtonTitles:@"はい", nil];
+                                          cancelButtonTitle:nil
+                                          otherButtonTitles:@"Yes", nil];
     [alert show];
 }
 
