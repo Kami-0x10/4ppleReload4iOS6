@@ -18,19 +18,24 @@
 
 // ポップアップを表示するメソッド
 - (void)showTestPopup {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Massage"
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Message"
                                                     message:@"Do you want to respring it?"
                                                    delegate:self
-                                          cancelButtonTitle:nil
+                                          cancelButtonTitle:nil // キャンセルボタンなし
                                           otherButtonTitles:@"Yes", nil];
     [alert show];
 }
 
 // UIAlertViewのボタンがタップされた時の処理
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 1) { // "はい" を選択した場合
+    if (buttonIndex == 0) { // "Yes"を選択した場合 (インデックス0)
         // リスプリングを実行する
-        system("killall -9 SpringBoard backboardd");
+        int result = system("killall -9 SpringBoard backboardd");
+        if (result == 0) {
+            NSLog(@"Respring successful");
+        } else {
+            NSLog(@"Error respringing: %d", result);
+        }
     }
 }
 
